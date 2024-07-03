@@ -1,0 +1,1193 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700&display=swap");
+
+/* common */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Noto Sans KR", sans-serif;
+}
+
+a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: inherit;
+	text-decoration: none;
+	&:visited {
+		color: inherit;
+	}
+	&:active {
+		color: inherit;
+	}
+}
+
+h2 {
+	width: 100%;
+	text-align: center;
+	font-size: 48px;
+	font-weight: 700;
+	line-height: 65px;
+	letter-spacing: -2.4px;
+}
+
+ul {
+	list-style: none;
+	display: flex;
+}
+
+li {
+	display: flex;
+}
+
+/* generic class */
+.w100 {
+	width: 100%;
+	min-width: 1440px;
+}
+
+.innerbox {
+	width: 1400px;
+	margin: 0 auto;
+	display: flex;
+}
+
+.horizon-center {
+	display: flex;
+	justify-content: center;
+}
+
+.vertical-center {
+	display: flex;
+	align-items: center;
+}
+
+/* component */
+.car {
+	/* width: 290px; */
+	/* background-color: #004c97; */
+	display: flex;
+	flex-direction: column;
+	color: #313131;
+	background-color: #fff;
+	border-radius: 10px;
+	counter-increment: car;
+	position: relative;
+	& > img {
+		object-fit: contain;
+	}
+	& > h3 {
+		font-size: 24px;
+		font-weight: 700;
+		letter-spacing: -0.96px;
+	}
+	& > p {
+		margin-top: 12px;
+		height: 47px;
+		font-size: 16px;
+		line-height: 23px;
+		letter-spacing: -0.64px;
+	}
+	& > .cost {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: 10px;
+		& > p {
+			font-size: 24px;
+			letter-spacing: -0.96px;
+			color: #ed1c14;
+		}
+		& > a {
+			width: 84px;
+			height: 36px;
+			border: 1px solid #ed1c14;
+			color: #ed1c14;
+			border-radius: 4px;
+			font-size: 14px;
+			font-weight: 700;
+			&:hover {
+				color: #fff;
+				background-color: #ed1c14;
+			}
+		}
+	}
+	& > .rank {
+		position: absolute;
+		display: block;
+		content: "";
+		top: 0;
+		right: 16px;
+		&::after {
+			position: absolute;
+			content: counter(car);
+			top: 0;
+			right: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 48px;
+			height: 48px;
+			font-size: 22px;
+			font-weight: 700;
+			color: #fff;
+			background-color: #666;
+			border-radius: 0 0 10px 10px;
+		}
+	}
+}
+
+.desc {
+	position: relative;
+	font-size: 14px;
+	line-height: normal;
+	letter-spacing: -0.56px;
+	&::before {
+		content: "*";
+		display: inline-block;
+		position: relative;
+	}
+}
+
+.more {
+	min-width: 115px;
+	height: 43px;
+	border: 1px solid #ddd;
+	border-radius: 60px;
+	font-weight: 700;
+	color: #000;
+	line-height: 43px;
+	display: flex;
+	gap: 8px;
+	justify-content: center;
+	align-items: center;
+	/* content: "전체보기"; */
+	&::after {
+		content: "";
+		display: block;
+		width: 6px;
+		height: 6px;
+		border-width: 2px 2px 0 0;
+		border-color: #000;
+		border-style: solid;
+		transform: rotate(45deg) translateY(1px);
+	}
+}
+
+/* contents */
+header {
+	display: flex;
+	height: 50px;
+	background-color: #f6f6f6;
+	& > .innerbox {
+		padding: 9px 0;
+		justify-content: space-between;
+		& > .logo {
+			& > h1 {
+				user-select: none;
+				color: #0000;
+				font-size: 0;
+			}
+			& > img {
+				width: 150px;
+				height: auto;
+				vertical-align: middle;
+			}
+		}
+		& > p {
+			font-size: 19.2px;
+			color: #555;
+			font-weight: 400;
+			white-space: nowrap;
+			overflow-x: hidden;
+		}
+		& > ul {
+			align-items: center;
+			& > .login {
+				margin-left: 16px;
+				& > a {
+					color: white;
+					background-color: #ed1c24;
+					height: 30px;
+					padding: 0px 16px;
+					font-size: 11.67px;
+					border-radius: 100px;
+					line-height: 250%;
+					font-weight: 500;
+				}
+			}
+			& > .vertical {
+				background-color: #dbdbdb;
+				width: 1px;
+				height: 16px;
+				margin: 4px 16px;
+			}
+			& > .beobin {
+				& > a {
+					color: #004c97;
+					font-size: 13.856px;
+					font-weight: 700;
+				}
+			}
+		}
+	}
+}
+
+nav {
+	height: 81px;
+	position: sticky;
+	top: 0px;
+	z-index: 99;
+	background-color: #fff;
+	box-shadow: 0 4px 8px #3332;
+	& > .innerbox {
+		& > .left {
+			margin: 0 auto;
+			& > li {
+				width: 183px;
+				& > a {
+					padding: 25px 0;
+					color: #313131;
+					font-size: 20px;
+					font-weight: 500;
+					position: relative;
+					&:hover {
+						color: #e32b30;
+						font-weight: 700;
+						&::after {
+							display: block;
+						}
+					}
+					&::after {
+						content: "";
+						position: absolute;
+						width: 80%;
+						height: 2px;
+						bottom: 0;
+						left: 50%;
+						transform: translate(-50%);
+						border-radius: 2px;
+						background-color: #e32b30;
+						display: none;
+					}
+				}
+			}
+		}
+		& > .right {
+			width: 105px;
+			& > * {
+				height: 60px;
+			}
+			& > .search {
+				width: 60px;
+				border-radius: 50%;
+				& > .icon {
+					width: 30px;
+					height: 30px;
+					background-image: url("../img/search.png");
+					background-size: 80%;
+					background-position: center;
+					background-repeat: no-repeat;
+				}
+				&:hover {
+					background-color: #fcfcfc;
+				}
+			}
+			/* 내비 더보기버튼 */
+			& > .menu {
+				width: 45px;
+				justify-content: flex-end;
+				cursor: pointer;
+				& > div {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					width: 25px;
+					height: 20px;
+					& > span {
+						width: 100%;
+						border-radius: 2px;
+						height: 2px;
+						transition: all .4s;
+						background-color: #000;
+						&.first.active {
+							transform: translateY(9px) rotate(45deg);
+						}
+						&.second.active {
+							opacity: 0;
+						}
+						&.third.active {
+							transform: translateY(-9px) rotate(-45deg);
+						}
+					}
+				}
+			}
+		}
+	}
+	&> .dropdown {
+		background-color: #fff;
+		z-index: 11;
+		position: absolute;
+		display: none;
+		width: 100%;
+		padding-top: 10px;
+		padding-bottom: 30px;
+		top: 81px;
+		left:0;
+		border-top: 1px solid #f2f2f2;
+		border-bottom: 1px solid #f2f2f2;
+		&.active {
+			display: flex;
+		}
+		&.horizon {
+			padding-bottom: 10px;
+		}
+		& ul {
+			flex-direction: column;
+		}
+		& a {
+			justify-content: initial;
+		}
+		&>.innerbox {
+			justify-content: center;
+			padding-right: 100px;
+		}
+		/* 올리면 밑으로 펴짐 */
+		& .menuvertical {
+			&.hidden{
+				display: none;
+			}
+			&.horizon {
+				flex-direction: row;
+				gap: 32px;
+				&>li {
+					width: initial;
+					/* &.expand::after {
+						display: none;
+					} */
+				}
+			}
+			&>li {
+				overflow: hidden;
+				height: 36px;
+				width: 183px;
+				line-height: 36px;
+				font-size: 16px;
+				color: #6c6b6b;
+				font-weight: 500;
+				position: relative;
+				/* 플러스 */
+				&.expand {
+					&::after {
+					content:'';
+					display: block;
+					position: absolute;
+					right: 30px;
+					top: calc(18px - 3px);
+					width: 7px;
+					height: 7px;
+					background: url(https://business.lotterental.com/assets/web/images/icons/ico_nav_plus.png);
+					}
+					&:hover::after {
+						background: url(https://business.lotterental.com/assets/web/images/icons/ico_nav_minus.png);
+					}
+				}
+				& ul>li {
+					color: #888;
+					padding: 0 10px;
+					font-size: 13px;
+					height: 27px;
+					visibility: hidden;
+					&:hover {
+						color:#ED1C24;
+					}
+					&:not(.bold) {
+						font-weight: 500;
+					}
+					&.bold {
+						font-weight: bold;
+					}
+					&.indent {
+						padding: 0 20px;
+					}
+				}
+				&:hover{
+					overflow: visible;
+					height: initial;
+					color:#ED1C24;
+					& ul>li {
+						visibility: visible;
+					}
+				}
+			}
+		}
+		
+	}
+}
+
+.introducebanner {
+	height: 594.55px;
+	position: relative;
+	overflow-x: hidden;
+	.bannercontainer {
+		width: 600%;
+		height: 100%;
+		display: flex;
+		/* background-color: #e32b30; */
+		.banner {
+			width: 1920px;
+			/* padding-top: 0 calc((1920px - 1400px) / 2); */
+			height: 100%;
+			position: relative;
+			& > p:first-child {
+				margin-top: 80px;
+				font-size: 85px;
+				line-height: 123px;
+				letter-spacing: -3.4px;
+				font-weight: 700;
+				color: #fff;
+			}
+			& > p {
+				width: 1400px;
+				margin: 30px auto 0 auto;
+				font-size: 44px;
+				line-height: 64px;
+				letter-spacing: -1.76px;
+				font-weight: 500;
+				color: #fff;
+			}
+			&.first {
+				background-image: url("https://business.lotterental.com/assets/web/images/page/main/brand_slide_4.png");
+			}
+		}
+	}
+	& > a {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		/* z-index: 4; */
+	}
+	.innerbox {
+		pointer-events: none;
+		position: absolute;
+		height: 100%;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		/* background-color: #004c97; */
+		& > .radiobuttons {
+			pointer-events: auto;
+			position: absolute;
+			background-color: #0003;
+			bottom: 60px;
+			left: calc(50% - 700px);
+			padding: 10px 20px;
+			z-index: 9;
+			border-radius: 20px;
+			gap: 16px;
+			& > .btn {
+				width: 10px;
+				height: 10px;
+				background-color: #fff;
+				border-radius: 10px;
+				&.red {
+					width: 34px;
+					background-color: #ff404b;
+				}
+			}
+		}
+	}
+}
+
+.iconmenu {
+	& > .innerbox {
+		margin-top: 50px;
+		margin-bottom: 140px;
+		justify-content: space-between;
+		& > .menu {
+			width: 120px;
+			height: 164px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			&.first {
+				width: 126px;
+			}
+			& > .icon {
+				width: 120px;
+				height: 120px;
+				background-color: #f8f8f8;
+				border-radius: 30px;
+				background-position: center;
+				background-repeat: no-repeat;
+				&.first {
+					background-color: #ff404b;
+					box-shadow: 2px 2px 12px #3336;
+					background-size: 100%;
+					background-image: url("https://business.lotterental.com/assets/web/images/page/main/ani_customer01.png");
+				}
+				&.second {
+					background-image: url("https://business.lotterental.com/assets/web/images/page/main/ico_rmSiteMenu_direct.png");
+				}
+				&.third {
+					background-image: url("https://business.lotterental.com/assets/web/images/page/main/ico_rmSiteMenu_newCar.png");
+				}
+				&.fourth {
+					background-image: url("https://business.lotterental.com/assets/web/images/page/main/ico_rmSiteMenu_usedCar.png");
+				}
+				&.fifth {
+					background-image: url("https://business.lotterental.com/assets/web/images/page/main/ico_rmSiteMenu_reservation.png");
+				}
+				&.sixth {
+					background-image: url("https://business.lotterental.com/assets/web/images/page/main/ico_rmSiteMenu_mgm.png");
+				}
+				&.seventh {
+					background-image: url("https://business.lotterental.com/assets/web/images/page/main/ico_rmSiteMenu_contract.png");
+				}
+			}
+			&:hover > .icon:not(.first) {
+				border: 1px solid #ff404b;
+			}
+			& > .title {
+				font-size: 20px;
+				line-height: 24px;
+				letter-spacing: -1px;
+				text-align: center;
+				white-space: nowrap;
+			}
+		}
+	}
+}
+
+.eventbanner {
+	height: 632px;
+	background-color: #dde8f3;
+	padding: 90px 0;
+	position: relative;
+	& > .innerbox {
+		height: 100%;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		& > .slidecontainer {
+			margin: 0 auto;
+			& > a {
+				width: 1200px;
+				height: 390px;
+				border-radius: 30px;
+				& > img {
+					box-shadow: 8px 8px 32px #0006;
+					border-radius: 30px;
+				}
+			}
+		}
+		& > .radiobuttons {
+			height: 12px;
+			display: flex;
+			gap: 16px;
+			justify-content: center;
+			& > .btn {
+				width: 12px;
+				height: 12px;
+				background-color: #999;
+				border-radius: 6px;
+				&.red {
+					width: 34px;
+					background-color: #ea4248;
+				}
+			}
+		}
+	}
+	& > .arrow {
+		width: 60px;
+		height: 60px;
+		border-color: #000;
+		border-style: solid;
+		position: absolute;
+		top: 50%;
+		&.left {
+			border-width: 2px 0 0 2px;
+			transform: rotate(-45deg);
+			left: 96px;
+		}
+		&.right {
+			border-width: 2px 2px 0 0;
+			transform: rotate(45deg);
+			right: 96px;
+		}
+	}
+}
+
+/* 제네시스 */
+.recommend.first {
+	margin-top: 140px;
+	margin-bottom: 140px;
+	& > .innerbox {
+		flex-direction: column;
+		& > * {
+			width: 100%;
+		}
+		/* 자동차컨테이너 */
+		& > .cars {
+			margin-top: 80px;
+			display: flex;
+			justify-content: space-between;
+			& > .car {
+				width: 290px;
+			}
+		}
+		/* 작은설명(회색) */
+		& > .desc {
+			margin-top: 40px;
+		}
+		& > .card {
+			margin-top: 60px;
+			width: 100%;
+			& > img {
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+}
+
+/* 하이브리드랭킹 */
+.recommend.second {
+	padding: 90px 0;
+	background-color: #293648;
+	& > .innerbox {
+		display: flex;
+		flex-direction: column;
+		& > h2 {
+			width: 100%;
+			text-align: center;
+			color: #fff;
+		}
+		& > .cars {
+			counter-reset: car;
+			margin-top: 60px;
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			& > .left {
+				width: 580px;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				padding-right: 30px;
+				gap: 16px;
+				& > .car.first {
+					padding: 24px 30px;
+					width: 100%;
+					/* flex: 1; */
+					& > img {
+						height: 220px;
+					}
+					& > h3 {
+						font-size: 26px;
+					}
+					& > p {
+						font-size: 18px;
+					}
+					& > .cost {
+						flex: 1;
+						align-items: end;
+						margin-top: 30px;
+						& > p {
+							font-size: 32px;
+						}
+						& > a {
+							font-size: 20px;
+							width: 128px;
+							height: 49px;
+						}
+					}
+					& > .rank::after {
+						width: 60px;
+						height: 60px;
+						font-size: 32px;
+						background-color: #ea4248;
+					}
+				}
+				& > .daese {
+					border-radius: 10px;
+				}
+			}
+			& > .right {
+				flex: 1;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 16px 20px;
+				& > .car {
+					& > img {
+						height: 145px;
+					}
+					padding: 24px 30px;
+				}
+			}
+		}
+		& > .desc {
+			margin-top: 30px;
+			color: #fff;
+		}
+	}
+}
+
+/* 저가형 */
+.recommend.third {
+	margin-top: 140px;
+	padding-bottom: 60px;
+	& > .innerbox {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		& > h2 {
+			width: 100%;
+		}
+		& > .middle {
+			width: 100%;
+			margin-top: 60px;
+			& > .cars {
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+				& > .car {
+					width: 320px;
+					padding: 30px;
+					border: 1px solid #efefef;
+					& > img {
+						width: 290px;
+						height: 145px;
+						position: relative;
+						left: -16px
+					}
+					& > h3 {
+						margin-top: 20px;
+					}
+					& > .cost {
+						flex-direction: column;
+						align-items: initial;
+						height: 100px;
+						margin-top: 20px;
+						& > p {
+							text-align: left;
+						}
+						& > a {
+							width: 100%;
+							height: 40px;
+						}
+					}
+					&:hover {
+						border: 1px solid #ed1c14;
+						box-shadow: 0 8px 12px #3336;
+					}
+				}
+			}
+			& > .desc {
+				margin-top: 30px;
+				color: #666;
+			}
+		}
+		& > .more {
+			position: absolute;
+			right: 0;
+			top: 48px;
+		}
+	}
+}
+
+/* 산업재 */
+.recommend.fourth {
+	margin-top: 140px;
+	& > .innerbox {
+		flex-direction: column;
+		position: relative;
+		& > .middle {
+			width: 100%;
+			margin-top: 60px;
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			& > .tabs {
+				height: 44px;
+				display: flex;
+				& > li {
+					cursor: pointer;
+					width: 150px;
+					border: 1px solid #efefef;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					&:first-child {
+						border-radius: 4px 0 0 4px;
+					}
+					&:nth-child(even) {
+						border-width: 1px 0 1px 0;
+					}
+					&:last-child {
+						border-width: 1px 1px 1px 0;
+						border-radius: 0 4px 4px 0;
+					}
+					&.active {
+						background-color: #ea4248;
+						& > a {
+							color: white;
+							font-weight: 700;
+						}
+					}
+					& > a {
+						width: 100%;
+						height: 100%;
+					}
+				}
+			}
+			& > .items {
+				margin-top: 40px;
+				width: 100%;
+				position: relative;
+				gap: calc( (1400px - (240px * 5)) / 4);
+				display: none;
+				&.active {
+					display: flex;
+				}
+				& > .item {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					align-items: start;
+					& > .pic {
+						position: relative;
+						width: 240px;
+						height: 240px;
+						border-radius: 10px;
+						border: 1px solid #ddd;
+						padding: 10px;
+						& > img {
+							/* background-color: #004c97; */
+							width: 100%;
+							height: 100%;
+							object-fit: contain;
+						}
+						&::after {
+							position: absolute;
+							display: block;
+							content: "";
+							bottom: 20px;
+							right: 20px;
+							width: 34px;
+							height: 34px;
+							background-image: url("https://business.lotterental.com/assets/web/images/page/main/ico_cart.png");
+						}
+					}
+					& > p {
+						text-align: left;
+						font-weight: 700;
+						&.name {
+							font-size: 18px;
+							margin-top: 20px;
+							color: #313131;
+							font-weight: 700;
+							letter-spacing: -0.72px;
+						}
+						&.cost {
+							margin-top: 4px;
+							color: #ea4248;
+							font-size: 20px;
+							font-weight: 700;
+							letter-spacing: -0.8px;
+						}
+					}
+				}
+			}
+			/* 양옆화살표 */
+			&>.arrow {
+				position: absolute;
+				display: flex;
+				justify-items: center;
+				align-items: center;
+				width: 90px;
+				height: 97px;
+				top: 192px;
+				transform: translateY(calc(-90px / 2.0));
+				&::after {
+					content: "";
+					display: block;
+					width: 56px;
+					height: 56px;
+					border-color: #ddd;
+					border-style: solid
+				}
+				&.left {
+					left: -90px;
+					&::after {
+						border-width: 2px 0 0 2px;
+						transform: rotate(-45deg);
+					}
+				}
+				&.right {
+					right: -90px;
+					&::after {
+						border-width: 2px 2px 0 0;
+						transform: rotate(45deg);
+					}
+				}
+			}
+			& > .more {
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+		}
+	}
+}
+
+/* 서비스 */
+.service {
+	margin-top: 140px;
+	margin-bottom: 100px;
+	& > .innerbox {
+		display: flex;
+		flex-direction: column;
+		& > .middle {
+			margin-top: 80px;
+			display: flex;
+			justify-content: space-between;
+			& > .item {
+				width: 440px;
+				height: 246px;
+				border-radius: 10px;
+				border: 1px solid #ddd;
+				padding-top: 40px;
+				padding-bottom: 20px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+				& > p {
+					user-select: none;
+				}
+				& > .title {
+					font-size: 24px;
+					color: #ea4248;
+					font-weight: 500;
+					letter-spacing: -1.2px;
+				}
+				& > .tooltip {
+					margin-top: 16px;
+					font-size: 14px;
+					line-height: 20px;
+					letter-spacing: -0.7px;
+				}
+				& > img {
+					margin-top: 20px;
+					width: 80px;
+					height: 78px;
+				}
+			}
+		}
+	}
+}
+
+/* 하단 */
+footer {
+	/* 인포메뉴 */
+	& > .infomenu {
+		justify-content: center;
+		border-top: 1px solid #ccc;
+		border-bottom: 1px solid #f2f2f2;
+		& > li {
+			padding: 13px 0;
+			& > .text {
+				font-size: 14px;
+				padding-right: 15px;
+				margin-right: 15px;
+				border-right: 1px solid #ddd;
+				color: #999;
+				font-weight: 400;
+			}
+			&:first-child > .text {
+				font-weight: 700;
+			}
+			&:last-child > .text {
+				border-right: none;
+				padding-right: none;
+				margin-right: none;
+			}
+		}
+	}
+	/*협력사메뉴*/
+	& > .corps {
+		& > .innerbox {
+			margin-top: 46px;
+			margin-bottom: 40px;
+			display: flex;
+			flex-direction: column;
+			& > .logo {
+				width: 151px;
+			}
+			& > .infodetail {
+				margin-top: 40px;
+				& > ul {
+					height: 25px;
+					color: #999;
+					& > li {
+						display: flex;
+						align-items: center;
+						& > .text {
+							line-height: 1;
+							font-size: 14px;
+						}
+						&:not(:last-child) > .text {
+							padding-right: 9px;
+							margin-right: 9px;
+							border-right: 1px solid #999;
+						}
+						& > a {
+							font-size: 14px;
+							text-decoration: underline;
+							&.spc {
+								padding-left: 5px;
+								color: #555;
+							}
+						}
+					}
+				}
+			}
+			& > .bottom {
+				margin-top: 30px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				& > .copyright {
+					font-size: 14px;
+					color: #ccc;
+				}
+				& > .corpmenu {
+					display: flex;
+					align-items: center;
+					& > .corplist {
+						margin-right: 10px;
+						& > li {
+							& > a {
+								padding: 0px 11px;
+								position: relative;
+								font-size: 15px;
+								font-weight: 500;
+								text-align: center;
+							}
+							&:first-child > a {
+								padding-left: 0;
+							}
+							&:last-child > a {
+								padding-right: 0;
+							}
+							&:not(:last-child) > a {
+								&::after {
+									position: absolute;
+									content: "";
+									display: block;
+									width: 1px;
+									height: 20px;
+									right: 0px;
+									top: 50%;
+									transform: translateY(-50%);
+									background-color: #ddd;
+								}
+							}
+						}
+					}
+					& > .hovermenu {
+						width: 156px;
+						padding: 8px 5px 8px 14px;
+						border: 1px solid #f2f2f2;
+						border-radius: 4px;
+						font-size: 14px;
+						color: #555;
+						justify-content: flex-start;
+						position: relative;
+						&::after {
+							display: block;
+							content: "";
+							position: absolute;
+							top: 10px;
+							right: 10px;
+							width: 5px;
+							height: 5px;
+							border-style: solid;
+							border-radius: 2px;
+							border-width: 2.5px 2.5px 0 0;
+							transform: rotate(-45deg);
+						}
+					}
+				}
+			}
+		}
+	}
+	/* 수상 */
+	& > .awardcontainer {
+		padding: 24px 0;
+		background-color: #f6f6f6;
+		& > .innerbox {
+			overflow: hidden;
+			display: flex;
+			flex-direction: column;
+			& > .titlebox {
+				display: flex;
+				height: 26px;
+				align-items: center;
+				& > p {
+					font-size: 16.8px;
+					line-height: 24px;
+					/* vertical-align: top; */
+					font-weight: 500;
+					color: #555;
+				}
+				& > a {
+					width: 20px;
+					height: 20px;
+					background-size: contain;
+				}
+				& > .play {
+					margin-left: 10px;
+					margin-right: 7px;
+					background-image: url("https://business.lotterental.com/assets/web/images/btn-play.png");
+				}
+				& > .pause {
+					background-image: url("https://business.lotterental.com/assets/web/images/btn-pause.png");
+				}
+			}
+			& > .awards {
+				display: flex;
+				width: 8480px;
+				margin-top: 15px;
+				& .award {
+					width: 280px;
+					display: flex;
+					& > img {
+						object-fit: contain;
+						object-position: top;
+						width: 40px;
+					}
+					& > .text {
+						padding-left: 10px;
+						display: flex;
+						flex-direction: column;
+						& > .top {
+							font-size: 14px;
+							color: #555;
+							margin-bottom: 5px;
+							line-height: 22px;
+						}
+						& > .bottom {
+							font-size: 11.6px;
+							color: #999;
+						}
+					}
+				}
+			}
+		}
+	}
+}
